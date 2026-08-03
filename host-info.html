@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diventa Partner — Lagoon</title>
+<meta name="description" content="Unisciti alla rete Lagoon come partner verificato. Offri i tuoi spazi ai viaggiatori e genera entrate extra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#040C0C;--surface:#0D1C1C;--surface2:#112424;
+  --text:#ECF4F4;--text2:rgba(236,244,244,0.5);--text3:rgba(236,244,244,0.28);
+  --accent:#4F9B9B;--accent2:#3a7a7a;
+  --border:rgba(79,155,155,0.12);
+  --fd:'Baloo 2',system-ui,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 40px;
+  background:rgba(4,10,10,0.94);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.nav-name{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#f2ede4;letter-spacing:-.02em;line-height:1;}
+.nav-back{
+  font-size:.76rem;font-weight:600;letter-spacing:.04em;
+  color:var(--text2);text-decoration:none;
+  display:flex;align-items:center;gap:6px;
+  transition:color .18s;
+}
+.nav-back:hover{color:var(--accent);}
+.nav-back svg{width:14px;height:14px;}
+
+/* HERO */
+.hero{
+  padding:80px 40px 64px;max-width:720px;margin:0 auto;text-align:center;
+  position:relative;
+}
+.hero::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:600px;height:400px;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 0%,rgba(79,155,155,0.14) 0%,transparent 70%);
+}
+.hero-eye{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.67rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px;
+  border:1px solid rgba(79,155,155,0.3);border-radius:99px;
+  padding:5px 14px;
+}
+.hero-eye svg{width:11px;height:11px;}
+.hero-h{
+  font-family:var(--fd);
+  font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.04em;line-height:1.08;
+  color:#f2ede4;margin-bottom:16px;text-wrap:balance;
+}
+.hero-sub{
+  font-size:1rem;color:var(--text2);max-width:480px;margin:0 auto 40px;line-height:1.75;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--accent);color:#fff;
+  font-family:var(--fb);font-size:.9rem;font-weight:700;
+  padding:13px 30px;border-radius:99px;text-decoration:none;
+  box-shadow:0 0 36px rgba(79,155,155,0.22);
+  transition:opacity .18s,transform .18s;
+}
+.hero-cta:hover{opacity:.85;transform:translateY(-1px);}
+.hero-cta svg{width:14px;height:14px;}
+
+/* SECTIONS */
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+/* BENEFITS */
+.benefits{padding:16px 0 72px;}
+.sec-label{
+  font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+}
+.benefits-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px;
+}
+.ben-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  padding:24px 20px;
+}
+.ben-ico{
+  width:38px;height:38px;border-radius:10px;
+  background:rgba(79,155,155,0.1);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.ben-ico svg{width:18px;height:18px;color:var(--accent);}
+.ben-h{font-family:var(--fd);font-size:1rem;font-weight:700;color:#f2ede4;margin-bottom:6px;}
+.ben-p{font-size:.82rem;color:var(--text2);line-height:1.65;}
+
+/* DIVIDER */
+.divider{height:1px;background:var(--border);margin:0 24px;}
+
+/* REQUISITI */
+.req-sec{padding:64px 0;}
+.req-intro{font-size:.97rem;color:var(--text2);line-height:1.7;margin-bottom:32px;max-width:560px;}
+.req-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.req-item{
+  display:flex;align-items:flex-start;gap:14px;
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  padding:16px 18px;
+}
+.req-check{
+  width:22px;height:22px;border-radius:6px;flex-shrink:0;margin-top:1px;
+  background:rgba(79,155,155,0.15);
+  display:flex;align-items:center;justify-content:center;
+}
+.req-check svg{width:12px;height:12px;color:var(--accent);}
+.req-text{font-size:.9rem;color:var(--text);line-height:1.55;}
+.req-text strong{color:#f2ede4;font-weight:600;}
+
+/* HOW IT WORKS */
+.how-sec{padding:64px 0;}
+.steps{display:flex;flex-direction:column;gap:0;position:relative;padding-left:28px;}
+.steps::before{
+  content:'';position:absolute;left:9px;top:24px;bottom:24px;
+  width:1.5px;background:linear-gradient(to bottom,var(--accent),transparent);
+}
+.step{display:flex;gap:20px;padding-bottom:40px;}
+.step:last-child{padding-bottom:0;}
+.step-num{
+  width:20px;height:20px;border-radius:50%;
+  background:var(--accent);color:#fff;
+  font-size:.68rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;position:relative;z-index:1;
+  margin-left:-28px;
+}
+.step-body{flex:1;}
+.step-h{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:#f2ede4;margin-bottom:5px;}
+.step-p{font-size:.88rem;color:var(--text2);line-height:1.65;}
+
+/* SERVICES OFFERED */
+.svc-sec{padding:32px 0 64px;}
+.svc-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.svc-chip{
+  display:flex;align-items:center;gap:7px;
+  padding:7px 16px;border-radius:99px;font-size:.82rem;font-weight:600;
+  border:1.5px solid;
+}
+.svc-chip.storage {background:rgba(122,82,0,.18);border-color:rgba(200,147,10,.35);color:#d4960a;}
+.svc-chip.shower  {background:rgba(29,122,148,.15);border-color:rgba(91,181,204,.3);color:#5BB5CC;}
+.svc-chip.rest    {background:rgba(26,79,138,.18);border-color:rgba(58,127,200,.3);color:#5a9de0;}
+.svc-chip.focus   {background:rgba(122,16,16,.18);border-color:rgba(200,48,48,.3);color:#e07070;}
+.svc-chip.tavolo  {background:rgba(115,10,56,.18);border-color:rgba(184,24,87,.3);color:#d45a90;}
+.svc-chip.charge  {background:rgba(21,74,24,.2);border-color:rgba(42,128,64,.3);color:#5ab870;}
+.svc-chip svg{width:13px;height:13px;}
+
+/* CTA BANNER */
+.cta-banner{
+  margin:0 24px 80px;
+  background:var(--surface2);border:1px solid rgba(79,155,155,0.2);
+  border-radius:18px;padding:48px 40px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,155,155,0.08) 0%,transparent 70%);
+}
+.cta-h{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:-.03em;color:#f2ede4;margin-bottom:10px;}
+.cta-p{font-size:.95rem;color:var(--text2);margin-bottom:30px;max-width:420px;margin-left:auto;margin-right:auto;}
+.cta-row{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
+.cta-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent);color:#fff;
+  font-weight:700;font-size:.9rem;
+  padding:13px 28px;border-radius:99px;text-decoration:none;
+  transition:opacity .18s;
+}
+.cta-primary:hover{opacity:.82;}
+.cta-secondary{
+  font-size:.88rem;color:var(--text2);
+}
+.cta-secondary a{color:var(--accent);text-decoration:none;}
+.cta-secondary a:hover{text-decoration:underline;}
+
+/* FOOTER */
+footer{
+  background:#040C0C;border-top:1px solid var(--border);
+  padding:36px 40px;display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+.ft-name{font-family:var(--fd);font-size:.95rem;font-weight:800;color:var(--text3);letter-spacing:-.02em;}
+.ft-links{display:flex;gap:20px;}
+.ft-links a{font-size:.78rem;color:var(--text3);text-decoration:none;transition:color .18s;}
+.ft-links a:hover{color:var(--accent);}
+.ft-copy{width:100%;font-size:.67rem;color:var(--text3);letter-spacing:.03em;border-top:1px solid var(--border);padding-top:16px;margin-top:8px;}
+
+@media(max-width:700px){
+  nav{padding:12px 16px;}
+  .hero{padding:56px 20px 48px;}
+  .wrap{padding:0 16px;}
+  .benefits-grid{grid-template-columns:1fr;}
+  .cta-banner{margin:0 16px 60px;padding:36px 20px;}
+  footer{padding:28px 16px;}
+  .ft-links{flex-direction:column;gap:10px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="logo-slot" style="width:28px;height:28px;border-radius:6px;background:#e0763c;overflow:hidden;flex-shrink:0;display:inline-block;"></span>
+    <span class="nav-name">Lagoon</span>
+  </a>
+  <a href="/" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+    Torna alla home
+  </a>
+</nav>
+
+<div class="hero">
+  <div class="hero-eye">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Partner Program
+  </div>
+  <h1 class="hero-h">Metti a reddito<br>il tuo spazio a Venezia.</h1>
+  <p class="hero-sub">Unisciti alla rete Lagoon come partner verificato e raggiungi migliaia di viaggiatori che cercano esattamente quello che offri.</p>
+  <a href="mailto:partners@thelagoonproject.com?subject=Candidatura%20Partner%20Lagoon" class="hero-cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Candidati ora — è gratuito
+  </a>
+</div>
+
+<!-- BENEFITS -->
+<div class="wrap">
+  <div class="benefits">
+    <div class="sec-label">Perché diventare partner</div>
+    <div class="benefits-grid">
+      <div class="ben-card">
+        <div class="ben-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <div class="ben-h">Entrate extra</div>
+        <p class="ben-p">Ogni prenotazione genera un compenso diretto. Imposti tu i prezzi, noi portiamo i clienti.</p>
+      </div>
+      <div class="ben-card">
+        <div class="ben-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="ben-h">Nuova clientela</div>
+        <p class="ben-p">I tuoi spazi visibili a viaggiatori internazionali che già usano Lagoon — senza spese di marketing.</p>
+      </div>
+      <div class="ben-card">
+        <div class="ben-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <div class="ben-h">Gestione da app</div>
+        <p class="ben-p">Dashboard host dedicata per vedere prenotazioni, confermare disponibilità e gestire i pagamenti.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SERVIZI OFFERTI -->
+<div class="wrap">
+  <div class="svc-sec">
+    <div class="sec-label">Servizi che puoi offrire</div>
+    <p style="font-size:.9rem;color:var(--text2);margin-bottom:4px;">Puoi attivare uno o più servizi in base agli spazi che hai disponibili.</p>
+    <div class="svc-grid">
+      <div class="svc-chip storage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M8 9V7a1 1 0 011-1h6a1 1 0 011 1v2"/><circle cx="12" cy="15" r="1"/></svg>
+        Deposito bagagli
+      </div>
+      <div class="svc-chip shower">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="3" r="1.5"/><path d="M5 10C5 6.69 7.69 4 11 4C14 4 16.5 6.1 17 9"/><line x1="18" y1="4" x2="18" y2="10"/><line x1="8" y1="13" x2="7" y2="17"/><line x1="12" y1="13" x2="12" y2="18"/><line x1="16" y1="13" x2="17" y2="17"/></svg>
+        Doccia / Bagno
+      </div>
+      <div class="svc-chip rest">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="12" width="18" height="5" rx="1.5" fill="currentColor" opacity=".7"/><rect x="5" y="6" width="5" height="5" rx="1" fill="currentColor" opacity=".5"/><rect x="14" y="6" width="5" height="5" rx="1" fill="currentColor" opacity=".5"/></svg>
+        Area relax / Riposo
+      </div>
+      <div class="svc-chip focus">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="13" rx="2"/><line x1="1" y1="19" x2="23" y2="19"/></svg>
+        Postazione lavoro
+      </div>
+      <div class="svc-chip tavolo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="21"/><path d="M5 3v6a3 3 0 006 0V3"/><line x1="16" y1="3" x2="16" y2="21"/><path d="M16 3v5a2 2 0 002 2"/></svg>
+        Tavolo al coperto
+      </div>
+      <div class="svc-chip charge">
+        <svg viewBox="0 0 24 24"><path d="M7 2L17 13H12L17 22L7 11H12L7 2Z" fill="currentColor"/></svg>
+        Ricarica dispositivi
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- REQUISITI -->
+<div class="wrap">
+  <div class="req-sec">
+    <div class="sec-label">Requisiti per la candidatura</div>
+    <p class="req-intro">Per garantire un'esperienza di qualità ai viaggiatori, tutti i partner Lagoon devono rispettare i seguenti criteri prima di essere verificati e andare live sull'app.</p>
+    <ul class="req-list">
+      <li class="req-item">
+        <div class="req-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+        <div class="req-text"><strong>Attività commerciale con sede a Venezia o Mestre</strong> — bar, ristorante, hotel, ostello, co-working space, palestra o altra struttura aperta al pubblico.</div>
+      </li>
+      <li class="req-item">
+        <div class="req-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+        <div class="req-text"><strong>Partita IVA italiana attiva</strong> — necessaria per la liquidazione dei compensi tramite fatturazione elettronica.</div>
+      </li>
+      <li class="req-item">
+        <div class="req-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+        <div class="req-text"><strong>Spazio adeguato al servizio offerto</strong> — area riservata e sicura per i bagagli, doccia in buone condizioni, tavoli accessibili, ecc. Il team Lagoon verifica in loco prima dell'attivazione.</div>
+      </li>
+      <li class="req-item">
+        <div class="req-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+        <div class="req-text"><strong>Standard minimi di pulizia e sicurezza</strong> — conformità alle normative igieniche locali; per docce e bagni, protocollo di sanificazione tra ogni utilizzo.</div>
+      </li>
+      <li class="req-item">
+        <div class="req-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+        <div class="req-text"><strong>Tempi di risposta alle prenotazioni</strong> — conferma entro 2 ore durante gli orari di apertura dichiarati. Le prenotazioni non confermate vengono cancellate automaticamente.</div>
+      </li>
+      <li class="req-item">
+        <div class="req-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+        <div class="req-text"><strong>Check-in tramite QR code Lagoon</strong> — i clienti presentano il QR all'arrivo; lo staff verifica tramite l'app host. Nessun hardware aggiuntivo necessario.</div>
+      </li>
+      <li class="req-item">
+        <div class="req-check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></div>
+        <div class="req-text"><strong>Accettazione dei Termini di Servizio Lagoon</strong> — inclusa la politica di rimborso per prenotazioni cancellate e le linee guida di condotta verso i viaggiatori.</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<div class="wrap">
+  <div class="how-sec">
+    <div class="sec-label">Come funziona</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-h">Candidatura</div>
+          <p class="step-p">Inviaci una mail a <a href="mailto:partners@thelagoonproject.com" style="color:var(--accent);text-decoration:none;">partners@thelagoonproject.com</a> con il nome della tua attività, l'indirizzo e il tipo di servizio che vorresti offrire. Risposta entro 48 ore.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-h">Verifica in loco</div>
+          <p class="step-p">Un membro del team Lagoon visita il tuo locale, verifica gli spazi e ti aiuta a configurare i servizi sull'app host. La visita dura circa 30 minuti.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-h">Vai live</div>
+          <p class="step-p">Il tuo profilo viene pubblicato sull'app Lagoon e diventa visibile ai viaggiatori. Inizi a ricevere prenotazioni e i compensi vengono liquidati mensilmente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2 class="cta-h">Pronto a unirti alla rete?</h2>
+  <p class="cta-p">La candidatura è gratuita e senza impegno. Ti risponderemo entro 48 ore lavorative.</p>
+  <div class="cta-row">
+    <a href="mailto:partners@thelagoonproject.com?subject=Candidatura%20Partner%20Lagoon" class="cta-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Scrivi a partners@thelagoonproject.com
+    </a>
+  </div>
+  <p class="cta-secondary" style="margin-top:16px;">Domande? <a href="mailto:info@thelagoonproject.com">info@thelagoonproject.com</a></p>
+</div>
+
+<footer>
+  <div class="ft-name">Lagoon</div>
+  <div class="ft-links">
+    <a href="/">← Home</a>
+    <a href="mailto:info@thelagoonproject.com">info@thelagoonproject.com</a>
+  </div>
+  <div class="ft-copy">© 2026 The Lagoon Project · Venezia, Italia</div>
+</footer>
+
+<script>
+/* Logo injector */
+var LP='M115 166.8C106.7 168.1 102.6 167 97 165.6C91.4 164.2 89 166.4 81.2 158.4C73.4 150.4 58.4 129.8 50.3 117.5C42.2 105.2 36.5 93.3 32.4 84.5C28.3 75.7 26.8 70.7 25.5 64.5C24.3 58.3 23.6 52.4 24.9 47.5C26.2 42.6 30 37.9 33.2 35.4C36.4 32.9 37.9 32.2 44 32.6C50.1 33 59 30.1 70 37.6C81 45.1 95.5 68.8 110 77.6C124.5 86.4 146.9 86.5 157 90.7C167.1 94.9 167.3 97 170.3 102.5C173.3 108 175.7 116.5 174.9 123.5C174.1 130.5 170.3 138.5 165.7 144.3C161 150.1 155.4 154.3 147 158.1C138.6 161.8 123.3 165.6 115 166.8Z';
+var li=0;
+function injectLogo(slot){
+  var id='lo'+(li++);var ns='http://www.w3.org/2000/svg';
+  var svg=document.createElementNS(ns,'svg');svg.setAttribute('width','100%');svg.setAttribute('height','100%');svg.setAttribute('viewBox','0 0 200 200');svg.style.display='block';
+  var defs=document.createElementNS(ns,'defs');
+  var grad=document.createElementNS(ns,'linearGradient');grad.id='wg'+id;grad.setAttribute('x1','78');grad.setAttribute('y1','26');grad.setAttribute('x2','132');grad.setAttribute('y2','178');grad.setAttribute('gradientUnits','userSpaceOnUse');
+  [['0','#1b4d5b'],['.52','#2c8278'],['1','#48c6a1']].forEach(function(s){var st=document.createElementNS(ns,'stop');st.setAttribute('offset',s[0]);st.setAttribute('stop-color',s[1]);grad.appendChild(st);});
+  var cp=document.createElementNS(ns,'clipPath');cp.id='lc'+id;var p=document.createElementNS(ns,'path');p.setAttribute('d',LP);cp.appendChild(p);
+  defs.appendChild(grad);defs.appendChild(cp);svg.appendChild(defs);
+  var g=document.createElementNS(ns,'g');g.setAttribute('clip-path','url(#lc'+id+')');var r=document.createElementNS(ns,'rect');r.setAttribute('width','200');r.setAttribute('height','200');r.setAttribute('fill','url(#wg'+id+')');g.appendChild(r);svg.appendChild(g);
+  slot.appendChild(svg);
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.logo-slot').forEach(injectLogo);
+});
+</script>
+</body>
+</html>
